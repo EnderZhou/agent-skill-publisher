@@ -1,7 +1,7 @@
 {
   "name": "skill-publisher-expert",
-  "version": "1.0.1",
-  "description": "Creates and packages agent skills and WorkBuddy experts with explicit validation evidence.",
+  "version": "1.0.2",
+  "description": "Generate and package WorkBuddy skills and experts; create and adapt skills for Trae, Codex, Claude Code, Cursor, GitHub Copilot and Hermes, with authorized marketplace submission and GitHub releases.",
   "author": {
     "name": "周鹏",
     "email": "8674537+EnderZhou@users.noreply.github.com"
@@ -15,8 +15,8 @@
     "en": "Skill Builder"
   },
   "displayDescription": {
-    "zh": "专注智能体技能与专家制作，支持多平台适配、元数据检查、资源打包和版本发布，提供清晰可验证的交付文件。",
-    "en": "Create agent skills and experts, adapt packages across clients, check metadata and resources, and prepare versioned releases."
+    "zh": "支持WorkBuddy专家及技能生成发布，适配Trae、Codex等平台技能，提供打包校验与版本管理",
+    "en": "Generate and package WorkBuddy skills and experts; create and adapt skills for Trae, Codex, Claude Code, Cursor, GitHub Copilot and Hermes, with authorized marketplace submission and GitHub releases."
   },
   "categoryId": "02-Engineering",
   "license": "MIT",

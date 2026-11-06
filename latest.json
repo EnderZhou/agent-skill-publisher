@@ -1,13 +1,13 @@
 {
   "name": "agent-skill-publisher",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "release_date": "2026-11-06",
   "repository": "https://github.com/EnderZhou/agent-skill-publisher",
   "client_import": "not_verified",
   "packages": [
     {
       "name": "agent-skill-publisher",
-      "version": "1.0.1",
+      "version": "1.0.2",
       "profile": "standard",
       "files": 16,
       "entry": "SKILL.md",
@@ -22,15 +22,15 @@
         "Secret pattern scan is not a comprehensive audit",
         "Target platform acceptance not proven"
       ],
-      "sha256": "a7fe17bad8614ed1041dee36f5400391dfc6648d8fce39bceff977e462d4ff52",
-      "bytes": 25827,
-      "zip": "agent-skill-publisher-v1.0.1_standard.zip",
+      "sha256": "bb356600ca5e63c6663e09667f7f86b907a2240da4234ee4be5298ba2a2f6cfb",
+      "bytes": 25871,
+      "zip": "agent-skill-publisher-v1.0.2_standard.zip",
       "zip_readback": "passed",
       "packaged_cli_smoke": "passed"
     },
     {
       "name": "agent-skill-publisher",
-      "version": "1.0.1",
+      "version": "1.0.2",
       "profile": "workbuddy",
       "files": 16,
       "entry": "SKILL.md",
@@ -45,15 +45,15 @@
         "Secret pattern scan is not a comprehensive audit",
         "Target platform acceptance not proven"
       ],
-      "sha256": "8bee0254f47a681cce5752e3ddee8494aca0631d86cdc1bc1964646406f7df3e",
-      "bytes": 25979,
-      "zip": "agent-skill-publisher-v1.0.1_WorkBuddy_skill.zip",
+      "sha256": "ae26e1e0a789624a6ca3cda585277c0297dcbb20a297750605b5983c4a101439",
+      "bytes": 26078,
+      "zip": "agent-skill-publisher-v1.0.2_WorkBuddy_skill.zip",
       "zip_readback": "passed",
       "packaged_cli_smoke": "passed"
     },
     {
       "name": "agent-skill-publisher",
-      "version": "1.0.1",
+      "version": "1.0.2",
       "profile": "trae",
       "files": 16,
       "entry": "SKILL.md",
@@ -68,15 +68,15 @@
         "Secret pattern scan is not a comprehensive audit",
         "Target platform acceptance not proven"
       ],
-      "sha256": "a7fe17bad8614ed1041dee36f5400391dfc6648d8fce39bceff977e462d4ff52",
-      "bytes": 25827,
-      "zip": "agent-skill-publisher-v1.0.1_Trae_skill.zip",
+      "sha256": "bb356600ca5e63c6663e09667f7f86b907a2240da4234ee4be5298ba2a2f6cfb",
+      "bytes": 25871,
+      "zip": "agent-skill-publisher-v1.0.2_Trae_skill.zip",
       "zip_readback": "passed",
       "packaged_cli_smoke": "passed"
     },
     {
       "name": "agent-skill-publisher",
-      "version": "1.0.1",
+      "version": "1.0.2",
       "profile": "folder",
       "files": 16,
       "entry": "agent-skill-publisher/SKILL.md",
@@ -91,15 +91,15 @@
         "Secret pattern scan is not a comprehensive audit",
         "Target platform acceptance not proven"
       ],
-      "sha256": "6f5c2a9fc01417d1b9e404ac24329850a5569281f66d4e4fe4656700fb7b9eb5",
-      "bytes": 26531,
-      "zip": "agent-skill-publisher-v1.0.1_AgentSkills_folder.zip",
+      "sha256": "7b58a980946fce702e095531f349c7fb78fe828cd4e91605c09cf19e7755fc98",
+      "bytes": 26575,
+      "zip": "agent-skill-publisher-v1.0.2_AgentSkills_folder.zip",
       "zip_readback": "passed",
       "packaged_cli_smoke": "passed"
     },
     {
       "name": "skill-publisher-expert",
-      "version": "1.0.1",
+      "version": "1.0.2",
       "display_name_characters": {
         "zh": 9,
         "en": 12
@@ -107,7 +107,7 @@
       "embedded_skills": [
         {
           "name": "agent-skill-publisher",
-          "version": "1.0.1"
+          "version": "1.0.2"
         }
       ],
       "profile": "expert",
@@ -124,9 +124,9 @@
         "Secret pattern scan is not a comprehensive audit",
         "Target platform acceptance not proven"
       ],
-      "sha256": "1e8702992702d36695270c20f4941b5b12360171f729fed74bf99243aa6de3b1",
-      "bytes": 32324,
-      "zip": "agent-skill-publisher-v1.0.1_WorkBuddy_expert.zip",
+      "sha256": "a97552c9f4be3bc4bce3f9d7a273fba6d0d45f33aeb19fd1a07e0a200af49fe7",
+      "bytes": 32762,
+      "zip": "agent-skill-publisher-v1.0.2_WorkBuddy_expert.zip",
       "zip_readback": "passed"
     }
   ]

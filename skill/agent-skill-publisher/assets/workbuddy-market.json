@@ -1,8 +1,8 @@
 {
   "display_name": "Agent技能发布助手",
   "display_name_en": "Agent Skill Publisher",
-  "description_zh": "创建技能和 WorkBuddy 专家，适配不同 Agent 客户端，检查目录、元数据与资源完整性，并按授权发布 GitHub。",
-  "description_en": "Create skills and WorkBuddy experts, adapt client packages, validate metadata and resources, and publish to GitHub when authorized.",
-  "version": "1.0.1",
+  "description_zh": "支持 WorkBuddy 技能与专家的生成、打包及按授权发布；支持 Trae、Codex、Claude Code、Cursor、GitHub Copilot、Hermes 技能的生成、适配与分发，以及 GitHub 版本发布。",
+  "description_en": "Generate and package WorkBuddy skills and experts; create and adapt skills for Trae, Codex, Claude Code, Cursor, GitHub Copilot and Hermes, with authorized marketplace submission and GitHub releases.",
+  "version": "1.0.2",
   "author": "EnderZhou"
 }
