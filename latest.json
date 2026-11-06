@@ -1,0 +1,101 @@
+{
+  "name": "agent-skill-publisher",
+  "version": "1.0.0",
+  "release_date": "2026-11-06",
+  "repository": "https://github.com/EnderZhou/agent-skill-publisher",
+  "client_import": "not_verified",
+  "packages": [
+    {
+      "name": "agent-skill-publisher",
+      "version": "1.0.0",
+      "profile": "standard",
+      "files": 16,
+      "entry": "SKILL.md",
+      "static_validation": "passed",
+      "runtime_test": "not_run",
+      "target_import": "not_verified",
+      "target_invocation": "not_verified",
+      "marketplace_publication": "not_submitted",
+      "limits": [
+        "Inline Markdown links only",
+        "No dynamic-path or runtime execution check",
+        "Secret pattern scan is not a comprehensive audit",
+        "Target platform acceptance not proven"
+      ],
+      "sha256": "3ca5e62944e49a1a6ad00a18a911fadc5cfefda7f76fb92eccbd24f55de7ca93",
+      "bytes": 25762,
+      "zip": "agent-skill-publisher-v1.0.0_standard.zip",
+      "zip_readback": "passed",
+      "packaged_cli_smoke": "passed"
+    },
+    {
+      "name": "agent-skill-publisher",
+      "version": "1.0.0",
+      "profile": "workbuddy",
+      "files": 16,
+      "entry": "SKILL.md",
+      "static_validation": "passed",
+      "runtime_test": "not_run",
+      "target_import": "not_verified",
+      "target_invocation": "not_verified",
+      "marketplace_publication": "not_submitted",
+      "limits": [
+        "Inline Markdown links only",
+        "No dynamic-path or runtime execution check",
+        "Secret pattern scan is not a comprehensive audit",
+        "Target platform acceptance not proven"
+      ],
+      "sha256": "742973598e613a15d789ad828cb5e0eb3af8421188470fbb9d494ffb6a779441",
+      "bytes": 25914,
+      "zip": "agent-skill-publisher-v1.0.0_WorkBuddy_skill.zip",
+      "zip_readback": "passed",
+      "packaged_cli_smoke": "passed"
+    },
+    {
+      "name": "agent-skill-publisher",
+      "version": "1.0.0",
+      "profile": "trae",
+      "files": 16,
+      "entry": "SKILL.md",
+      "static_validation": "passed",
+      "runtime_test": "not_run",
+      "target_import": "not_verified",
+      "target_invocation": "not_verified",
+      "marketplace_publication": "not_submitted",
+      "limits": [
+        "Inline Markdown links only",
+        "No dynamic-path or runtime execution check",
+        "Secret pattern scan is not a comprehensive audit",
+        "Target platform acceptance not proven"
+      ],
+      "sha256": "3ca5e62944e49a1a6ad00a18a911fadc5cfefda7f76fb92eccbd24f55de7ca93",
+      "bytes": 25762,
+      "zip": "agent-skill-publisher-v1.0.0_Trae_skill.zip",
+      "zip_readback": "passed",
+      "packaged_cli_smoke": "passed"
+    },
+    {
+      "name": "agent-skill-publisher",
+      "version": "1.0.0",
+      "profile": "folder",
+      "files": 16,
+      "entry": "agent-skill-publisher/SKILL.md",
+      "static_validation": "passed",
+      "runtime_test": "not_run",
+      "target_import": "not_verified",
+      "target_invocation": "not_verified",
+      "marketplace_publication": "not_submitted",
+      "limits": [
+        "Inline Markdown links only",
+        "No dynamic-path or runtime execution check",
+        "Secret pattern scan is not a comprehensive audit",
+        "Target platform acceptance not proven"
+      ],
+      "sha256": "80d6e59db8b523d423f2d814076c02090a2b8ca17597cbffbc94800ebf1f8ff3",
+      "bytes": 26466,
+      "zip": "agent-skill-publisher-v1.0.0_AgentSkills_folder.zip",
+      "zip_readback": "passed",
+      "packaged_cli_smoke": "passed"
+    }
+  ]
+}

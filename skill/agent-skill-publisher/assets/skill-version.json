@@ -1,0 +1,10 @@
+{
+  "name": "agent-skill-publisher",
+  "version": "1.0.0",
+  "release_date": "2026-11-06",
+  "author": "EnderZhou",
+  "license": "MIT",
+  "runtime": {"python": ">=3.10", "PyYAML": ">=6,<7"},
+  "network_required_for_local_packaging": false,
+  "target_client_import": "not_verified"
+}

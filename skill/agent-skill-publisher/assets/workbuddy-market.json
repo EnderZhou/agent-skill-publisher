@@ -1,0 +1,8 @@
+{
+  "display_name": "Agent技能发布助手",
+  "display_name_en": "Agent Skill Publisher",
+  "description_zh": "创建技能和 WorkBuddy 专家，适配不同 Agent 客户端，检查目录、元数据与资源完整性，并按授权发布 GitHub。",
+  "description_en": "Create skills and WorkBuddy experts, adapt client packages, validate metadata and resources, and publish to GitHub when authorized.",
+  "version": "1.0.0",
+  "author": "EnderZhou"
+}

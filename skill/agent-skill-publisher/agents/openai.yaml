@@ -1,0 +1,4 @@
+interface:
+  display_name: "Agent 技能与专家发布助手"
+  short_description: "整理技能经验，生成 WorkBuddy 专家及多客户端分发包并验证发布"
+  default_prompt: "使用 $agent-skill-publisher，把我的经验整理为技能，并为指定 Agent 平台生成经过检查的分发包。"
