@@ -1,8 +1,8 @@
 {
-  "display_name": "Agent技能发布助手",
-  "display_name_en": "Agent Skill Publisher",
-  "description_zh": "支持 WorkBuddy 技能与专家的生成、打包及按授权发布；支持 Trae、Codex、Claude Code、Cursor、GitHub Copilot、Hermes 技能的生成、适配与分发，以及 GitHub 版本发布。",
-  "description_en": "Generate and package WorkBuddy skills and experts; create and adapt skills for Trae, Codex, Claude Code, Cursor, GitHub Copilot and Hermes, with authorized marketplace submission and GitHub releases.",
-  "version": "1.0.2",
+  "display_name": "多平台Skill技能生成器",
+  "display_name_en": "Multi-platform Skill Builder",
+  "description_zh": "为 WorkBuddy、Trae、Codex、Claude Code、Cursor、GitHub Copilot、Hermes 等等平台制作 Skill 技能！把工作经验变成可复用技能，支持 WorkBuddy 专家生成、跨平台适配、打包校验、导入排错与 GitHub 发布。WorkBuddy 支持技能与专家；其余已列平台支持技能适配，其他平台按实际规范评估。",
+  "description_en": "Build reusable Skills for WorkBuddy, Trae, Codex, Claude Code, Cursor, GitHub Copilot, Hermes and more. Generate WorkBuddy experts, adapt skill packages, troubleshoot imports and prepare GitHub releases. Additional platforms require compatibility assessment.",
+  "version": "1.1.0",
   "author": "EnderZhou"
 }

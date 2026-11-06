@@ -1,10 +1,12 @@
-# Agent Skill Publisher · Agent 技能与专家发布助手
+# 多平台Skill技能生成器 · Agent Skill Publisher
 
 把实际工作经验整理成可复用技能，生成 **WorkBuddy 技能与专家**，并为 **Trae、Codex、Claude Code、Cursor、GitHub Copilot、Hermes** 准备合适的技能目录或导入包。
 
 本项目将技能编写、客户端适配、专家展示信息、包验证和 GitHub 发布经验集中维护。首版包含 2026-11-05 WorkBuddy 专家名称“17 字、上限 15 字”解析失败案例，以及技能包元数据、资源层级和版本管理经验。
 
-**版本：v1.0.2 · 许可证：MIT · 维护者：周鹏（EnderZhou）**
+**版本：v1.1.0 · 许可证：MIT · 维护者：周鹏（EnderZhou）**
+
+平台与能力简介：为 WorkBuddy、Trae、Codex、Claude Code、Cursor、GitHub Copilot、Hermes 等等平台制作 Skill 技能！把工作经验变成可复用技能，支持 WorkBuddy 专家生成、跨平台适配、打包校验、导入排错与 GitHub 发布。WorkBuddy 支持技能与专家；其余已列平台支持技能适配，其他平台按实际规范评估。
 
 ## 能做什么
 

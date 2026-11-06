@@ -3,16 +3,19 @@ name: agent-skill-publisher
 description: 创建、更新、检查和打包可分发的 Agent 技能与 WorkBuddy 专家，适配 WorkBuddy、Trae、Codex、Claude Code、Cursor、GitHub Copilot、Hermes 的技能入口与资源结构，并按授权发布 GitHub。用于技能/专家制作、导入失败修复和跨客户端迁移；不用于开发普通业务工作流或仅修改应用文案。
 license: MIT
 metadata:
-  version: "1.0.2"
+  version: "1.1.0"
   author: EnderZhou
 ---
 
-# Agent 技能与专家发布助手
+# 多平台Skill技能生成器
 
 把已有经验整理为可复用技能，维护一份通用源码，并为实际目标客户端制作独立包。先判断用户需要的是技能、专家、插件还是连接器，不把它们当成同一种 ZIP。版本事实位于 [版本清单](assets/skill-version.json)。
 
+对外能力简介：为 WorkBuddy、Trae、Codex、Claude Code、Cursor、GitHub Copilot、Hermes 等等平台制作 Skill 技能！把工作经验变成可复用技能，支持 WorkBuddy 专家生成、跨平台适配、打包校验、导入排错与 GitHub 发布。WorkBuddy 支持技能与专家；其余已列平台支持技能适配，其他平台按实际规范评估。
+
 ## 从任务选择资料
 
+- 优化名称、简介、吸引力与搜索发现：读 [命名与搜索发现](references/discovery.md)，同步更新所有目标包，遵守字段长度与真实支持范围。
 - 提炼经验或更新技能：读 [技能编写与资源组织](references/authoring.md)。保留用户目标、已授权范围和真正影响结果的经验，不复制整个聊天历史。
 - WorkBuddy 技能/专家制作及解析报错：读 [WorkBuddy 适配](references/workbuddy.md)，对应检查实际 ZIP。
 - 迁移到其他 Agent：读 [客户端适配矩阵](references/platforms.md)，确认客户端版本、入口和实际发现路径。Codex 元数据只在 Codex 适配中使用。

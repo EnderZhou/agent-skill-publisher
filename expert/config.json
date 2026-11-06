@@ -1,42 +1,42 @@
 {
   "name": "skill-publisher-expert",
-  "version": "1.0.2",
-  "description": "Generate and package WorkBuddy skills and experts; create and adapt skills for Trae, Codex, Claude Code, Cursor, GitHub Copilot and Hermes, with authorized marketplace submission and GitHub releases.",
+  "version": "1.1.0",
+  "description": "Build reusable Skills for WorkBuddy, Trae, Codex, Claude Code, Cursor, GitHub Copilot, Hermes and more. Generate WorkBuddy experts, adapt skill packages, troubleshoot imports and prepare GitHub releases. Additional platforms require compatibility assessment.",
   "author": {
     "name": "周鹏",
     "email": "8674537+EnderZhou@users.noreply.github.com"
   },
   "displayName": {
-    "zh": "Agent技能专家",
-    "en": "Skill Expert"
+    "zh": "多平台技能生成发布专家",
+    "en": "Skill Maker"
   },
   "profession": {
-    "zh": "技能与专家开发",
+    "zh": "Skill技能与专家生成",
     "en": "Skill Builder"
   },
   "displayDescription": {
-    "zh": "支持WorkBuddy专家及技能生成发布，适配Trae、Codex等平台技能，提供打包校验与版本管理",
-    "en": "Generate and package WorkBuddy skills and experts; create and adapt skills for Trae, Codex, Claude Code, Cursor, GitHub Copilot and Hermes, with authorized marketplace submission and GitHub releases."
+    "zh": "为WorkBuddy、Trae、Codex等平台生成技能与专家，支持跨端适配、打包排错与发布",
+    "en": "Build reusable Skills for WorkBuddy, Trae, Codex, Claude Code, Cursor, GitHub Copilot, Hermes and more. Generate WorkBuddy experts, adapt skill packages, troubleshoot imports and prepare GitHub releases. Additional platforms require compatibility assessment."
   },
   "categoryId": "02-Engineering",
   "license": "MIT",
   "tags": [
     {
-      "zh": "技能制作",
-      "en": "Skill Authoring"
+      "zh": "Skill技能生成",
+      "en": "Skill Builder"
     },
     {
-      "zh": "专家打包",
-      "en": "Expert Packaging"
+      "zh": "WorkBuddy专家",
+      "en": "WorkBuddy Experts"
     },
     {
-      "zh": "多端适配",
-      "en": "Client Adaptation"
+      "zh": "多平台适配发布",
+      "en": "Cross-platform Publishing"
     }
   ],
   "quickPrompts": [
     {
-      "zh": "把我的工作经验整理为可复用技能。",
+      "zh": "为 WorkBuddy、Trae、Codex 等平台把我的工作经验生成 Skill 技能，并制作 WorkBuddy 专家包。",
       "en": "Turn my workflow experience into a reusable skill."
     },
     {
@@ -44,9 +44,27 @@
       "en": "Check this WorkBuddy expert package for import errors."
     },
     {
-      "zh": "为我的技能生成不同客户端的分发包。",
+      "zh": "把我的技能适配到 Claude Code、Cursor、GitHub Copilot、Hermes 等平台，并准备 GitHub 发布包。",
       "en": "Create client-specific packages for my skill."
     }
   ],
-  "homepage": "https://github.com/EnderZhou/agent-skill-publisher"
+  "homepage": "https://github.com/EnderZhou/agent-skill-publisher",
+  "keywords": [
+    "WorkBuddy",
+    "Trae",
+    "Codex",
+    "Claude Code",
+    "Cursor",
+    "GitHub Copilot",
+    "Copilot",
+    "Hermes",
+    "Skill",
+    "Skills",
+    "技能生成",
+    "专家生成",
+    "智能体",
+    "跨平台适配",
+    "GitHub发布",
+    "导入失败"
+  ]
 }
