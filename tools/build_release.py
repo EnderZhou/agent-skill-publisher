@@ -49,6 +49,9 @@ def main():
             output.with_suffix(output.suffix + '.report.json').write_text(
                 json.dumps(report, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
             reports.append(report)
+        expert_output = dist / f'{SKILL.name}-v{version}_WorkBuddy_expert.zip'
+        reports.append(pub.build_expert(ROOT / 'expert/config.json', ROOT / 'expert/agent.md',
+                                       ROOT / 'expert/avatar.png', expert_output, [source], force=True))
     manifest = {'name': SKILL.name, 'version': version, 'release_date': '2026-11-06',
                 'repository': 'https://github.com/EnderZhou/agent-skill-publisher',
                 'client_import': 'not_verified', 'packages': reports}

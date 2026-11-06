@@ -14,6 +14,7 @@ import stat
 import struct
 import sys
 import tempfile
+import time
 import unicodedata
 from urllib.parse import unquote, urlsplit
 import zipfile
@@ -421,7 +422,14 @@ def write_zip(files, output: Path, profile, force=False, sources=()):
             json.dump(report, target, ensure_ascii=False, indent=2)
             target.write('\n')
     finally:
-        temporary.unlink(missing_ok=True)
+        for attempt in range(5):
+            try:
+                temporary.unlink(missing_ok=True)
+                break
+            except PermissionError:
+                if attempt == 4:
+                    raise
+                time.sleep(0.1 * (attempt + 1))
     return report
 
 

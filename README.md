@@ -4,7 +4,7 @@
 
 本项目将技能编写、客户端适配、专家展示信息、包验证和 GitHub 发布经验集中维护。首版包含 2026-11-05 WorkBuddy 专家名称“17 字、上限 15 字”解析失败案例，以及技能包元数据、资源层级和版本管理经验。
 
-**版本：v1.0.0 · 许可证：MIT · 维护者：周鹏（EnderZhou）**
+**版本：v1.0.1 · 许可证：MIT · 维护者：周鹏（EnderZhou）**
 
 ## 能做什么
 
@@ -22,6 +22,7 @@
 
 | 文件后缀 | 用途 |
 | --- | --- |
+| `_WorkBuddy_expert.zip` | WorkBuddy **专家**上传入口，内置完整技能 |
 | `_WorkBuddy_skill.zip` | WorkBuddy **技能**上传入口，包含专用市场元数据 |
 | `_Trae_skill.zip` | Trae 技能上传候选包，根目录 SKILL.md |
 | `_AgentSkills_folder.zip` | 将其中 `agent-skill-publisher` 文件夹放入已确认的客户端 skills 目录 |

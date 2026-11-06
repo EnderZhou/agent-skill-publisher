@@ -38,7 +38,9 @@ class PublisherTests(unittest.TestCase):
         (self.source / 'references').mkdir()
         (self.source / 'references/guide.md').write_text('Example guide.\n', encoding='utf-8')
         self.market = self.root / 'market.json'
-        self.market.write_bytes((SKILL / 'assets/workbuddy-market.json').read_bytes())
+        market = json.loads((SKILL / 'assets/workbuddy-market.json').read_text(encoding='utf-8'))
+        market['version'] = '1.0.0'
+        self.market.write_text(json.dumps(market), encoding='utf-8')
 
     def tearDown(self):
         self.tmp.cleanup()

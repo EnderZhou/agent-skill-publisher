@@ -3,7 +3,7 @@ name: agent-skill-publisher
 description: 创建、更新、检查和打包可分发的 Agent 技能与 WorkBuddy 专家，适配 WorkBuddy、Trae、Codex、Claude Code、Cursor、GitHub Copilot、Hermes 的技能入口与资源结构，并按授权发布 GitHub。用于技能/专家制作、导入失败修复和跨客户端迁移；不用于开发普通业务工作流或仅修改应用文案。
 license: MIT
 metadata:
-  version: "1.0.0"
+  version: "1.0.1"
   author: EnderZhou
 ---
 
