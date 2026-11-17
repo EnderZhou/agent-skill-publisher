@@ -118,5 +118,3 @@ class DeliveryTests(unittest.TestCase):
         files['assets/skill-version.json'] = b'{"name":"wrong-skill","version":"1.0.0"}'
         with self.assertRaisesRegex(pub.Invalid, 'manifest/name mismatch'):
             pub.validate(files, 'standard')
-
-
