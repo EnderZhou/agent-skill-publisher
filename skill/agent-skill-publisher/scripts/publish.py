@@ -230,9 +230,9 @@ def skill_info(files, profile='standard'):
     machine_name(text_field(meta, 'name'))
     need(len(text_field(meta, 'description')) <= 1024, 'Skill description exceeds 1024 characters')
     need(bool(body.strip()), 'Skill body is empty')
-    version = None
+    version = meta.get('version')
     if isinstance(meta.get('metadata'), dict):
-        version = meta['metadata'].get('version')
+        version = meta['metadata'].get('version', version)
     if 'assets/skill-version.json' in files:
         version_meta = json_object(files['assets/skill-version.json'], 'skill-version.json')
         version = text_field(version_meta, 'version')
@@ -240,6 +240,7 @@ def skill_info(files, profile='standard'):
         need(not source_version or source_version == version, 'Skill versions disagree')
     if version:
         need(isinstance(version, str) and SEMVER.fullmatch(version), 'Skill version must be a semver string')
+        need(not meta.get('version') or meta['version'] == version, 'Skill frontmatter/manifest version mismatch')
     if profile == 'workbuddy':
         for key in WORKBUDDY_FIELDS:
             text_field(meta, key)
@@ -248,7 +249,12 @@ def skill_info(files, profile='standard'):
         need(all(len(name.split('/')) <= 2 for name in files),
              'WorkBuddy skill profile requires root files or directory/file; adapt deep resources in a separate source copy')
         version = meta['version']
-    return {'name': meta['name'], 'version': version}
+    manifest = json_object(files['assets/skill-version.json'], 'skill-version.json') if 'assets/skill-version.json' in files else {}
+    identity = manifest.get('skill_name', manifest.get('name'))
+    need(not identity or identity == meta['name'], 'Skill manifest/name mismatch')
+    return {'name': meta['name'], 'version': version, 'build_id': manifest.get('build_id'),
+            'local_revision': manifest.get('local_revision'), 'skill_entry': 'SKILL.md',
+            'version_source': 'assets/skill-version.json' if manifest else 'SKILL.md metadata'}
 
 
 def localized(config, key):
@@ -346,11 +352,21 @@ def expert_info(files):
         need(PurePosixPath(path).name == info['name'], 'Embedded skill directory/name mismatch')
         # Resolve embedded links independently; dependencies must not escape into another skill.
         check_links(subset)
-        skills.append(info)
+        skills.append({**info, 'path': prefix.rstrip('/')})
     need(len(skills) == len({x['name'] for x in skills}), 'Duplicate embedded skill names')
     need(agent.get('skills', []) == [s['name'] for s in skills], 'Agent preloaded skills mismatch')
     return {'name': c['name'], 'version': c['version'], 'display_name_characters':
-            {lang: len(value) for lang, value in c['displayName'].items()}, 'embedded_skills': skills}
+            {lang: len(value) for lang, value in c['displayName'].items()}, 'embedded_skills': skills,
+            'version_source': key, 'agent_entry': agent_path,
+            'avatar': {'path': avatar, 'sha256': hashlib.sha256(files[avatar]).hexdigest(),
+                       'bytes': len(files[avatar]), 'dimensions': list(image_size(files[avatar]))}}
+
+
+def check_avatar(files, expected):
+    """Compare actual packaged artwork with the caller's selected image."""
+    info = expert_info(files)
+    need(files[info['avatar']['path']] == expected.read_bytes(), 'Expert avatar differs from selected image')
+    return {'selected_avatar_match': True, **info['avatar']}
 
 
 def validate(files, profile):
@@ -373,6 +389,7 @@ def validate(files, profile):
         if profile == 'folder':
             need(root == info['name'], 'Outer directory must equal skill machine name')
     return {**info, 'profile': profile, 'files': len(files), 'entry': entry,
+            'artifact_role': 'package-validation-report', 'importable_workflow': False,
             'static_validation': 'passed', 'runtime_test': 'not_run', 'target_import': 'not_verified',
             'target_invocation': 'not_verified', 'marketplace_publication': 'not_submitted',
             'limits': ['Inline Markdown links only', 'No dynamic-path or runtime execution check',
@@ -428,8 +445,14 @@ def write_zip(files, output: Path, profile, force=False, sources=()):
                 break
             except PermissionError:
                 if attempt == 4:
-                    raise
+                    # Windows scanners may hold the scratch ZIP after readback.
+                    # Preserve the real build exception (if any); do not invalidate
+                    # a completed artifact solely because scratch cleanup is delayed.
+                    report['temporary_cleanup'] = 'deferred_file_in_use'
+                    break
                 time.sleep(0.1 * (attempt + 1))
+    if report.get('temporary_cleanup'):
+        report_path.write_text(json.dumps(report, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
     return report
 
 
@@ -487,7 +510,10 @@ def build_expert(config_path, body_path, avatar_path, output, skill_paths, force
     title = localized(config, 'displayName')['zh']
     files['README.md'] = (f'# {title}\n\nExpert version: {config["version"]}\n\n'
                           + body + '\n\nTarget WorkBuddy import/invocation/review: not verified.\n').encode('utf-8')
-    return write_zip(files, output, 'expert', force, sources)
+    report = write_zip(files, output, 'expert', force, sources)
+    report['selected_avatar_match'] = check_avatar(load_files(output), avatar_path)['selected_avatar_match']
+    output.with_suffix(output.suffix + '.report.json').write_text(json.dumps(report, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
+    return report
 
 
 def main():
@@ -496,6 +522,7 @@ def main():
     check = commands.add_parser('check', help='Inspect a directory or ZIP without executing its code')
     check.add_argument('source', type=Path)
     check.add_argument('--profile', choices=PROFILES, default='standard')
+    check.add_argument('--expected-avatar', type=Path, help='Expert only: require byte equality with the selected avatar')
     pack = commands.add_parser('package', help='Create a client-specific skill ZIP')
     pack.add_argument('source', type=Path)
     pack.add_argument('output', type=Path)
@@ -511,6 +538,9 @@ def main():
     try:
         if args.command == 'check':
             report = validate(load_files(args.source), args.profile)
+            if args.expected_avatar:
+                need(args.profile == 'expert', '--expected-avatar requires --profile expert')
+                report['selected_avatar_match'] = check_avatar(load_files(args.source), args.expected_avatar)['selected_avatar_match']
             if args.source.is_dir() and args.profile not in ('folder', 'expert'):
                 need(args.source.name == report['name'], 'Source folder must equal skill machine name')
             if args.source.is_file():

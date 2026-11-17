@@ -2,9 +2,9 @@
 
 把实际工作经验整理成可复用技能，生成 **WorkBuddy 技能与专家**，并为 **Trae、Codex、Claude Code、Cursor、GitHub Copilot、Hermes** 准备合适的技能目录或导入包。
 
-本项目将技能编写、客户端适配、专家展示信息、包验证和 GitHub 发布经验集中维护。首版包含 2026-11-05 WorkBuddy 专家名称“17 字、上限 15 字”解析失败案例，以及技能包元数据、资源层级和版本管理经验。
+本项目将技能编写、客户端适配、专家展示信息、包验证和 GitHub 发布经验集中维护。1.2.0 补齐了 FastGPT、n8n 专家多轮实测中暴露的版本来源、头像随包、安装一致性、最终产物检查及证据收集经验。
 
-**版本：v1.1.0 · 许可证：MIT · 维护者：周鹏（EnderZhou）**
+**版本：v1.2.0 · 许可证：MIT · 维护者：周鹏（EnderZhou）**
 
 平台与能力简介：为 WorkBuddy、Trae、Codex、Claude Code、Cursor、GitHub Copilot、Hermes 等等平台制作 Skill 技能！把工作经验变成可复用技能，支持 WorkBuddy 专家生成、跨平台适配、打包校验、导入排错与 GitHub 发布。WorkBuddy 支持技能与专家；其余已列平台支持技能适配，其他平台按实际规范评估。
 
@@ -14,6 +14,8 @@
 - 创建 WorkBuddy 单 Agent 专家，内置完整技能，检查中英文名称、角色信息、卡片文案与推荐问题。
 - 从同一源码生成根入口包、WorkBuddy 市场包和标准技能目录包，避免污染通用 frontmatter。
 - 检查实际 ZIP 的路径、大小写冲突、重复字段、常见本地链接、图片尺寸和明显凭据风险。
+- 核对选定头像与实际包内图片，比较可信发行包与本地安装文件。
+- 用普通用户任务、对话日志和定向反例持续改进技能；区分离线检查、客户端实跑和市场审核。
 - 管理技能/专家独立版本、SHA256、更新和回滚，按用户授权发布 GitHub。
 
 这是独立维护的工具与经验技能，无平台官方背书。包结构通过检查不等于在客户端完成导入、运行或市场审核。当前发行包记录的这些客户端阶段均为 **未验证**。
@@ -53,8 +55,11 @@ python skill/agent-skill-publisher/scripts/publish.py check out/skill.zip --prof
 
 ```bash
 python skill/agent-skill-publisher/scripts/publish.py expert my-expert.json agent-body.md avatar.png out/expert.zip --skill skill/agent-skill-publisher
-python skill/agent-skill-publisher/scripts/publish.py check out/expert.zip --profile expert
+python skill/agent-skill-publisher/scripts/publish.py check out/expert.zip --profile expert --expected-avatar avatar.png
+python skill/agent-skill-publisher/scripts/verify_install.py out/expert.zip /path/to/installed/expert --profile expert
 ```
+
+WorkBuddy 专家头像不能手动上传，必须在 ZIP 内由 plugin.json 的 avatar 引用（2026-11-13 用户确认）；单独图片可作预览，不能代替包内头像。
 
 工具保留资源字节，对 WorkBuddy 独立技能的深层资源报错，要求先在适配副本中修正引用和加载器。专家内置技能不受独立技能两段路径 profile 的约束。不会自动执行输入技能代码、安装到客户端或上传平台。
 
@@ -81,3 +86,5 @@ python tools/build_release.py
 指南依据官方资料和维护者实际反馈编写，区分官方规范与上传器观察。名称 15 字限制及独立技能两段目录规则的证据见 [案例记录](skill/agent-skill-publisher/references/lessons.md)；链接与核对日期见 [来源记录](skill/agent-skill-publisher/assets/source-records.json)。代码独立实现，未嵌入其他技能代码或企业业务资料。
 
 欢迎通过 [Issues](https://github.com/EnderZhou/agent-skill-publisher/issues) 提交导入报错和适配反馈。请附脱敏包结构、目标客户端版本、实际错误与期望结果；不要提交令牌、原始企业日志或私有业务文件。
+
+测试方法与证据边界见 [证据与迭代](skill/agent-skill-publisher/references/evidence-and-iteration.md)，可复制的验收提问见 [测试提示词](skill/agent-skill-publisher/references/acceptance-prompts.md)。

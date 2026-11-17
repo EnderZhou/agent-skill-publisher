@@ -1,6 +1,6 @@
 {
   "name": "skill-publisher-expert",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "Build reusable Skills for WorkBuddy, Trae, Codex, Claude Code, Cursor, GitHub Copilot, Hermes and more. Generate WorkBuddy experts, adapt skill packages, troubleshoot imports and prepare GitHub releases. Additional platforms require compatibility assessment.",
   "author": {
     "name": "周鹏",
@@ -40,8 +40,8 @@
       "en": "Turn my workflow experience into a reusable skill."
     },
     {
-      "zh": "检查这份 WorkBuddy 专家包的导入错误。",
-      "en": "Check this WorkBuddy expert package for import errors."
+      "zh": "检查WorkBuddy专家或技能包，核对实际版本、安装文件、内置头像和资源引用。",
+      "en": "Check expert or skill versions, installed files, bundled avatar and resource references."
     },
     {
       "zh": "把我的技能适配到 Claude Code、Cursor、GitHub Copilot、Hermes 等平台，并准备 GitHub 发布包。",

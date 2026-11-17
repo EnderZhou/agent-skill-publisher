@@ -1,16 +1,26 @@
 {
+  "artifact_role": "release-manifest",
+  "importable_workflow": false,
   "name": "agent-skill-publisher",
-  "version": "1.1.0",
-  "release_date": "2026-11-06",
+  "version": "1.2.0",
+  "expert_version": "1.2.0",
+  "build_id": "1.2.0-20261117-release",
+  "release_date": "2026-11-17",
   "repository": "https://github.com/EnderZhou/agent-skill-publisher",
   "client_import": "not_verified",
   "packages": [
     {
       "name": "agent-skill-publisher",
-      "version": "1.1.0",
+      "version": "1.2.0",
+      "build_id": "1.2.0-20261117-release",
+      "local_revision": "release-20261117",
+      "skill_entry": "SKILL.md",
+      "version_source": "assets/skill-version.json",
       "profile": "standard",
-      "files": 17,
+      "files": 20,
       "entry": "SKILL.md",
+      "artifact_role": "package-validation-report",
+      "importable_workflow": false,
       "static_validation": "passed",
       "runtime_test": "not_run",
       "target_import": "not_verified",
@@ -22,18 +32,24 @@
         "Secret pattern scan is not a comprehensive audit",
         "Target platform acceptance not proven"
       ],
-      "sha256": "6d74ea8a91bb1cb4ab1654b639bf0bd43d5bb42711a379507c2688fe54f5b7b0",
-      "bytes": 27373,
-      "zip": "agent-skill-publisher-v1.1.0_standard.zip",
+      "sha256": "6de7fca17efa9f5d7634c4eab81dfedb9dc860167c25c2bd39d0b5a2f14109a8",
+      "bytes": 35340,
+      "zip": "agent-skill-publisher-v1.2.0_standard.zip",
       "zip_readback": "passed",
       "packaged_cli_smoke": "passed"
     },
     {
       "name": "agent-skill-publisher",
-      "version": "1.1.0",
+      "version": "1.2.0",
+      "build_id": "1.2.0-20261117-release",
+      "local_revision": "release-20261117",
+      "skill_entry": "SKILL.md",
+      "version_source": "assets/skill-version.json",
       "profile": "workbuddy",
-      "files": 17,
+      "files": 20,
       "entry": "SKILL.md",
+      "artifact_role": "package-validation-report",
+      "importable_workflow": false,
       "static_validation": "passed",
       "runtime_test": "not_run",
       "target_import": "not_verified",
@@ -45,18 +61,24 @@
         "Secret pattern scan is not a comprehensive audit",
         "Target platform acceptance not proven"
       ],
-      "sha256": "33df34c41fbba9f208590c04c1ebcbc49d074ba90d1c1b1dfe1d7e58a76ce5ae",
-      "bytes": 27583,
-      "zip": "agent-skill-publisher-v1.1.0_WorkBuddy_skill.zip",
+      "sha256": "d6e3391f10e66dfaa569737425eebdda9cfca4e5b0499b8866efaae00584fe6d",
+      "bytes": 35551,
+      "zip": "agent-skill-publisher-v1.2.0_WorkBuddy_skill.zip",
       "zip_readback": "passed",
       "packaged_cli_smoke": "passed"
     },
     {
       "name": "agent-skill-publisher",
-      "version": "1.1.0",
+      "version": "1.2.0",
+      "build_id": "1.2.0-20261117-release",
+      "local_revision": "release-20261117",
+      "skill_entry": "SKILL.md",
+      "version_source": "assets/skill-version.json",
       "profile": "trae",
-      "files": 17,
+      "files": 20,
       "entry": "SKILL.md",
+      "artifact_role": "package-validation-report",
+      "importable_workflow": false,
       "static_validation": "passed",
       "runtime_test": "not_run",
       "target_import": "not_verified",
@@ -68,18 +90,24 @@
         "Secret pattern scan is not a comprehensive audit",
         "Target platform acceptance not proven"
       ],
-      "sha256": "6d74ea8a91bb1cb4ab1654b639bf0bd43d5bb42711a379507c2688fe54f5b7b0",
-      "bytes": 27373,
-      "zip": "agent-skill-publisher-v1.1.0_Trae_skill.zip",
+      "sha256": "6de7fca17efa9f5d7634c4eab81dfedb9dc860167c25c2bd39d0b5a2f14109a8",
+      "bytes": 35340,
+      "zip": "agent-skill-publisher-v1.2.0_Trae_skill.zip",
       "zip_readback": "passed",
       "packaged_cli_smoke": "passed"
     },
     {
       "name": "agent-skill-publisher",
-      "version": "1.1.0",
+      "version": "1.2.0",
+      "build_id": "1.2.0-20261117-release",
+      "local_revision": "release-20261117",
+      "skill_entry": "SKILL.md",
+      "version_source": "assets/skill-version.json",
       "profile": "folder",
-      "files": 17,
+      "files": 20,
       "entry": "agent-skill-publisher/SKILL.md",
+      "artifact_role": "package-validation-report",
+      "importable_workflow": false,
       "static_validation": "passed",
       "runtime_test": "not_run",
       "target_import": "not_verified",
@@ -91,15 +119,15 @@
         "Secret pattern scan is not a comprehensive audit",
         "Target platform acceptance not proven"
       ],
-      "sha256": "4361114473d1c7778be0b6e81690eeb8da138ac798b683f4ffcf32c5ebc376af",
-      "bytes": 28121,
-      "zip": "agent-skill-publisher-v1.1.0_AgentSkills_folder.zip",
+      "sha256": "718dd60bc2014f71c7fd9a8527b4666d34984a8aed7ebe9afe71e93d98a3e726",
+      "bytes": 36220,
+      "zip": "agent-skill-publisher-v1.2.0_AgentSkills_folder.zip",
       "zip_readback": "passed",
       "packaged_cli_smoke": "passed"
     },
     {
       "name": "skill-publisher-expert",
-      "version": "1.1.0",
+      "version": "1.2.0",
       "display_name_characters": {
         "zh": 11,
         "en": 11
@@ -107,12 +135,30 @@
       "embedded_skills": [
         {
           "name": "agent-skill-publisher",
-          "version": "1.1.0"
+          "version": "1.2.0",
+          "build_id": "1.2.0-20261117-release",
+          "local_revision": "release-20261117",
+          "skill_entry": "SKILL.md",
+          "version_source": "assets/skill-version.json",
+          "path": "skills/agent-skill-publisher"
         }
       ],
+      "version_source": ".codebuddy-plugin/plugin.json",
+      "agent_entry": "agents/skill-publisher-expert.md",
+      "avatar": {
+        "path": "avatars/expert.png",
+        "sha256": "1437d5dbc1ebc7cbc7473e3a0ddebbcb98b129af8ccf32e1d8a510eb095494fe",
+        "bytes": 4421,
+        "dimensions": [
+          512,
+          512
+        ]
+      },
       "profile": "expert",
-      "files": 21,
+      "files": 24,
       "entry": ".codebuddy-plugin/plugin.json",
+      "artifact_role": "package-validation-report",
+      "importable_workflow": false,
       "static_validation": "passed",
       "runtime_test": "not_run",
       "target_import": "not_verified",
@@ -124,10 +170,13 @@
         "Secret pattern scan is not a comprehensive audit",
         "Target platform acceptance not proven"
       ],
-      "sha256": "7dc28ea2ca4ec01fef556d3bb8a0a5a0716d0afcf9a1bdd88ddc84c56b95cabe",
-      "bytes": 34279,
-      "zip": "agent-skill-publisher-v1.1.0_WorkBuddy_expert.zip",
-      "zip_readback": "passed"
+      "sha256": "52b391ee14618e760d5d7862ec6b22f8a3d60d73c955b01d3bd033766a3d9ceb",
+      "bytes": 43850,
+      "zip": "agent-skill-publisher-v1.2.0_WorkBuddy_expert.zip",
+      "zip_readback": "passed",
+      "selected_avatar_match": true,
+      "embedded_skill_byte_identical": true,
+      "packaged_cli_smoke": "passed"
     }
   ]
 }
